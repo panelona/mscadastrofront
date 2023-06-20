@@ -21,9 +21,9 @@ export default function Cadastro() {
     event.preventDefault();
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/usuario`, {
-        emailAddress,
-        password,
-        username,
+        "email": emailAddress,
+        "senha": password,
+        "nome": username
       }).then((response) => {
           if (response.status === 201) {
               setSuccessMessage('Cadastro realizado com sucesso!');
